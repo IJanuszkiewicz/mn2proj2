@@ -1,4 +1,4 @@
-function I = podwojnaCalkaNaDiamencie(f, n)
+function I = P1Z34_IJA_podwojnaCalkaNaDiamencie(f, n)
 % Projekt 1, zadanie 34
 % Igor Januszkiewicz 327357
 %
@@ -9,10 +9,11 @@ function I = podwojnaCalkaNaDiamencie(f, n)
 % Następnie zastosowana jest złożona, 2-punktowa kwadratura 
 % Gaussa-Legendre'a ze względu na każdą zmienną.
 % Dane wejściowe:
-% f - funkcja całkowana 2 zmiennych. Musi przyjmować 2 wektory równej
-% długości i zwracać liczbę.
-% n - ilość podprzedziałów, na których bedzie stosowana kwadratura.
+%   f - Uchwyt do funkcji całkowanej 2 zmiennych. Musi przyjmować 2
+%       macierze o jednakowych wymiarach i zwracać macierz z wartościami.
+%   n - Ilość podprzedziałów, na których bedzie stosowana kwadratura.
+%       Domyślnie przyjmuje wartość 2000.
 % Dane wyjściowe:
-% I - przybliżona wartość całki.
+%   I - Przybliżona wartość całki.
 
 end % function
