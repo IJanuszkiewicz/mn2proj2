@@ -16,4 +16,20 @@ function I = P1Z34_IJA_podwojnaCalkaNaDiamencie(f, n)
 % Dane wyjściowe:
 %   I - Przybliżona wartość całki.
 
+if nargin < 2
+    n = 2000;
+end
+
+nodes = [-0.57735026918962576451 0.57735026918962576451];
+fkw = @(u, v) f((u - v)/2, (u + v)/2)/2;
+
+x = (1/n):(2/n):(2*n - 1)/n;
+x = [x + nodes(1)/n - 1; x + nodes(2)/n - 1];
+x = reshape(x, [], 1);
+x = repmat(x, 1, length(x));
+
+valMat = fkw(x, x')/(n*n);
+
+I = sum(sum(valMat));
+
 end % function
