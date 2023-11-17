@@ -27,6 +27,7 @@ x = (1/n):(2/n):(2*n - 1)/n;
 x = [x + nodes(1)/n - 1; x + nodes(2)/n - 1];
 x = reshape(x, [], 1);
 x = repmat(x, 1, length(x));
+plot((x-x')/2,(x+x')/2,".")
 
 valMat = fkw(x, x')/(n*n);
 
