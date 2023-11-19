@@ -14,8 +14,7 @@ fprintf("\nznakiem S oznaczona jest wartość całki przy pomocy funkcji" +...
     " głownej\ndiff to |S - 2*c|\n\n")
 
 for n = [1 100 2000]
-    fprintf("wscisnij dowoly przycisk aby wyświetlić wyniki dla n=%d", n)
-    disp("")
+    fprintf("wscisnij dowoly przycisk aby wyświetlić wyniki dla n=%d\n", n)
     pause;
     fprintf("\nn=%d\n", n)
     for c = -5:1:5

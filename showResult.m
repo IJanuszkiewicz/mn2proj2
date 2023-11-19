@@ -1,4 +1,4 @@
-function [] = showResoult(fStr, fkwStr, f, E, n)
+function [] = showResult(fStr, fkwStr, f, E, n)
 % Projekt 1, zadanie 34
 % Igor Januszkiewicz 327357
 %

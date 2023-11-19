@@ -17,19 +17,19 @@ disp("S(f) - przybliżona wartoś całki na diamencie z funkcji f")
 disp("diff - |E(f) - S(f)|")
 
 for n = [1,100,2000]
-    fprintf("\nwciśnij dowoly przycisk aby zobaczyc wyniki dla n=%d", n);
+    fprintf("\nwciśnij dowoly przycisk aby zobaczyc wyniki dla n=%d\n", n);
     pause;
     fprintf("n=%d\n", n);
 
     f = @(x, y) x.*y;
-    showResoult("xy", "(u^2 - v^2)/4", f, "0", n);
+    showResult("xy", "(u^2 - v^2)/4", f, "0", n);
     
     f = @(x, y) (y.^2 - x.^2).^2 - 2*(x + y).*((y - x).^2) - 3;
-    showResoult("(y^2 - x^2)^2 - 2(x + y)(y - x)^2 - 3", ...
+    showResult("(y^2 - x^2)^2 - 2(x + y)(y - x)^2 - 3", ...
         "(u^2)(v^2) - 2uv^2 - 3", f, "-52/9", n);
 
     f = @(x, y) (x - y).*(y + 3*x);
-    showResoult("(x - y)(y + 3x)", "v(v - 2u)", f, "2/3", n);
+    showResult("(x - y)(y + 3x)", "v(v - 2u)", f, "2/3", n);
 
 end
 
