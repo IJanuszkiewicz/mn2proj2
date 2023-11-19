@@ -21,13 +21,13 @@ if nargin < 2
 end
 
 % przekształcenie na kwadrat
-fkw = @(u, v) f((u - v)/2, (u + v)/2)/2;
+fkw = toSquare(f);
 
 % tworzenie wektora węzłów złożonej kwadratury
 x = getNodes(n);
 
 % obliczenie wszystkich wartości funkcji
-valMat = fkw(x, x')/(n*n);
+valMat = fkw(x, x')/(2*n*n);
 
 % sumujemy wszystkie wartości z wagami równymi 1
 I = sum(sum(valMat));
