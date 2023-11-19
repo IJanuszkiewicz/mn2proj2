@@ -1,6 +1,8 @@
-function [] = test5Cubic()
+function [] = test6Cubic()
 % Projekt 1, zadanie 34
 % Igor Januszkiewicz 327357
+%
+% Sprawdzenie czy kwadratura jest poprawna dla funkcji sześciennych
 
 disp("Funkcja sprawdza poprawność całkowania funkcji sześciennych")
 disp("2 - punktowa kwadratura Gaussa-Legende'a ze względu na każdą")
@@ -15,8 +17,8 @@ disp("S(f) - przybliżona wartoś całki na diamencie z funkcji f")
 disp("diff - |E(f) - S(f)|")
 
 for n = [1,100,2000]
-    fprintf("\nwciśnij enter aby zobaczyc wyniki dla n=%d", n);
-    input("");
+    fprintf("\nwciśnij dowoly przycisk aby zobaczyc wyniki dla n=%d", n);
+    pause;
     fprintf("n=%d\n", n);
 
     f = @(x, y) x.*x.*x + y.*y.*y;

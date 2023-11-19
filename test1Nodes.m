@@ -1,4 +1,8 @@
 function [] = test1Nodes()
+% Projekt 1, zadanie 34
+% Igor Januszkiewicz 327357
+%
+% Sprawdzenie czy węzły kwadratury są poprawne
 
 wielLegendra = @(x)(3*x.*x - 1)/2;
 x = getNodes(1);

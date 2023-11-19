@@ -1,6 +1,8 @@
 function [] = test2Square()
 % Projekt 1, zadanie 34
 % Igor Januszkiewicz 327357
+%
+% Sprawdzenie przekształcenie jest poprawne
 
 disp( ...
   "Sprawdzenie czy funkcja po transformacji oblicza wartości w diamencie.")
@@ -18,7 +20,8 @@ y = reshape(x(:,length(x)/2 + 1:end), 1, []);
 
 disp("Graf wszystkich punktów których bedzie obliczana wartość f w " + ...
     "funkcji głownej (dla n = 20)")
-input("naciśnij enter aby wyświetlić:");
+disp("naciśnij dowolny przycisk aby wyświetlić:")
+pause;
 plot(x1, y, ".");
     
 end % function
