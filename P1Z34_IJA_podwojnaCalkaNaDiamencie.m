@@ -9,8 +9,8 @@ function I = P1Z34_IJA_podwojnaCalkaNaDiamencie(f, n)
 % Następnie zastosowana jest złożona, 2-punktowa kwadratura 
 % Gaussa-Legendre'a ze względu na każdą zmienną.
 % Dane wejściowe:
-%   f - Uchwyt do funkcji całkowanej 2 zmiennych. Musi przyjmować 2
-%       macierze o jednakowych wymiarach i zwracać macierz z wartościami.
+%   f - Uchwyt do funkcji całkowanej 2 zmiennych. Musi wykonywać operacje
+%       na wektorach
 %   n - Ilość podprzedziałów, na których bedzie stosowana kwadratura.
 %       Domyślnie przyjmuje wartość 2000.
 % Dane wyjściowe:
@@ -20,17 +20,16 @@ if nargin < 2
     n = 2000;
 end
 
-nodes = [-0.57735026918962576451 0.57735026918962576451];
+% przekształcenie na kwadrat
 fkw = @(u, v) f((u - v)/2, (u + v)/2)/2;
 
-x = (1/n):(2/n):(2*n - 1)/n;
-x = [x + nodes(1)/n - 1; x + nodes(2)/n - 1];
-x = reshape(x, [], 1);
-x = repmat(x, 1, length(x));
-plot((x-x')/2,(x+x')/2,".")
+% tworzenie wektora węzłów złożonej kwadratury
+x = getNodes(n);
 
+% obliczenie wszystkich wartości funkcji
 valMat = fkw(x, x')/(n*n);
 
+% sumujemy wszystkie wartości z wagami równymi 1
 I = sum(sum(valMat));
 
 end % function
