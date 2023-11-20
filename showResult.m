@@ -5,7 +5,7 @@ function [] = showResult(fStr, fkwStr, f, E, n)
 % Funkcja wyświetla dokładną wartość całki, obliczoną przez program główny
 % i różnicę.
 
-fprintf("f(x, y) = %s, fkw(u, v) = %s\n", fStr, fkwStr);
+fprintf("f(x, y) = %s\nfkw(u, v) = %s\n", fStr, fkwStr);
 S = P1Z34_IJA_podwojnaCalkaNaDiamencie(f, n);
 fprintf("E(f)=%s, S(f)=%7f, diff=%e\n\n", E, S,...
     abs(str2num(E) - S)); %#ok<ST2NM> 
