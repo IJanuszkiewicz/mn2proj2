@@ -6,22 +6,32 @@ function [] = test2Square()
 
 disp( ...
   "Sprawdzenie czy funkcja po transformacji oblicza wartości w diamencie.")
-disp("f(x,y) = [x, y]")
-disp("fsq(x,y) = f((x - y)/2, (x + y)/2) obliczone przez toSquare")
-disp("x - węzły dostarczone przez getNodes")
+
 f = @(x,y) [x, y];
 fsq = toSquare(f);
-x = getNodes(20);
+nodes = getNodes(20);
 
-x = fsq(x, x');
+transformedNodes = nodes;
+transformedNodes = fsq(transformedNodes, transformedNodes');
 
-x1 = reshape(x(:,1:length(x)/2), 1, []);
-y = reshape(x(:,length(x)/2 + 1:end), 1, []);
+x = reshape(transformedNodes(:,1:length(transformedNodes)/2), 1, []);
+y = reshape(transformedNodes(:,length(transformedNodes)/2 + 1:end), 1, []);
 
-disp("Graf wszystkich punktów których bedzie obliczana wartość f w " + ...
-    "funkcji głownej (dla n = 20)")
+nodes = [repmat(nodes, 1, length(nodes)), ...
+    repmat(nodes', length(nodes), 1)];
+
+disp("Graf węzłów przed i po transformacji ")
+disp("funkcji głownej (dla n = 20)")
 disp("naciśnij dowolny przycisk aby wyświetlić:")
 pause;
-plot(x1, y, ".");
-    
+subplot(1,2,2);
+plot(x, y, ".");
+axis equal;
+title("transformed nodes")
+subplot(1,2,1);
+x = reshape(nodes(:,1:length(nodes)/2), 1, []);
+y = reshape(nodes(:,length(nodes)/2 + 1:end), 1, []);
+plot(x, y, ".");
+axis equal;
+title("nodes before transfomation")
 end % function
