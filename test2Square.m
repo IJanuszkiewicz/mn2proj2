@@ -27,11 +27,12 @@ pause;
 subplot(1,2,2);
 plot(x, y, ".");
 axis equal;
-title("transformed nodes")
+title("Transformed Nodes")
 subplot(1,2,1);
 x = reshape(nodes(:,1:length(nodes)/2), 1, []);
 y = reshape(nodes(:,length(nodes)/2 + 1:end), 1, []);
 plot(x, y, ".");
 axis equal;
-title("nodes before transfomation")
+title("Nodes Before Transfomation")
+
 end % function
