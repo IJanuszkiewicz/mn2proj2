@@ -28,9 +28,10 @@ end
 title("Błąd metody numerycznej w zaleznosci od ilości podprzedziałów")
 xlabel("n");
 ylabel("błąd");
-legend(names,'Location',"best");
+lgd = legend(names,'Location',"best");
 
 hold off;
 
+coeffs
 
 end % funtion
